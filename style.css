@@ -1,149 +1,216 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+:root {
+    --primary-color: #2b5876;     /* Modern Deep Blue */
+    --accent-color: #4e4376;      /* Deep Purple Accent */
+    --text-color: #333333;        /* Dark Grey text for readability */
+    --bg-light: #f8f9fa;          /* Soft light grey background */
+    --white: #ffffff;
+    --border-color: #dddddd;
+}
 
-    <link rel="stylesheet" href="style.css">
-</head>
-<body style="background-color: aliceblue;">
-    <header>
-        <hr>
-        <nav>
-            <a href="index.html">Home</a> |
-            <a href="about.html">About</a> |
-            <a href="education.html">Education</a> |
-            <a href="skills.html">Skills</a> |
-            <a href="projects.html">Projects</a> |
-            <a href="hobbies.html">Hobbies</a> |
-            <a href="contact.html">Contact</a>
-        </nav>
-        <hr>
-        
-        <center>
-            <img src="profile.jpg" alt="Portrait of Mahlet Ayele" width="300" height="300">
-            <h1><em>Mahlet Ayele</em></h1>
-        </center>
-    </header>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <main>
- 
-        <section id="about">
-            <h2>About</h2>
-            <hr>
-            <p>
-                Hello! My name is <strong>Mahlet Ayele</strong>. I am a second-year
-                Computer Science student at Unity University. I enjoy learning web
-                development, programming, and creating useful software projects.
-                My goal is to become a skilled Full Stack Developer.
-            </p>
-        </section>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-light);
+    padding: 20px;
+}
 
-        <br><br>
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: var(--white);
+    padding: 30px 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-        <section id="education">
-            <h2>Education</h2>
-            <hr>
-            <table border="1" cellpadding="8">
-                <tr>
-                    <th>Level</th>
-                    <th>Institution</th>
-                    <th>Status</th>
-                </tr>
+nav {
+    margin-bottom: 20px;
+}
 
-                <tr>
-                    <td>Bachelor of Computer Science</td>
-                    <td>Unity University</td>
-                    <td>Second Year</td>
-                </tr>
-            </table>
-        </section>
+nav a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0 10px;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+}
 
-        <br><br>
+nav a:hover {
+    color: var(--white);
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
 
-        <section id="skills">
-            <h2>Skills</h2>
-            <hr>
-            <ul>
-                <li>HTML</li>
-                <li>C++</li>
-                <li>MySQL</li>
-                <li>JavaScript (Basic)</li>
-                <li>CSS (Basic)</li>
-                <li>Problem Solving</li>
-            </ul>
-        </section>
+/* Profile Picture Formatting */
+header img {
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    object-fit: cover;
+    margin-top: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
 
-        <br><br>
+header h1 {
+    margin-top: 10px;
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+}
 
-        <section id="projects">
-            <h2>Projects</h2>
-            <hr>
-            <ol>
-                <li>Child Protection Reporting System</li>
-                <li>Waste Management and Recycling Monitoring System</li>
-                <li>Car Rental Management System</li>
-                <li>University Project Tracking System</li>
-            </ol>
-        </section>
+hr {
+    display: none; /* Hide traditional horizontal rules for a modern aesthetic */
+}
 
-        <br><br>
+main {
+    max-width: 900px;
+    margin: 0 auto;
+}
 
-        <section id="hobbies">
-            <h2>Hobbies</h2>
-            <hr>
-            <ul>
-                <li>Reading Books</li>
-                <li>Watching Movies</li>
-                <li>Learning New Programming Languages</li>
-                <li>Listening to Music</li>
-            </ul>
-        </section>
+section {
+    background-color: var(--white);
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
 
-        <br><br>
+h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 8px;
+    font-size: 1.5rem;
+}
 
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <hr>
-            <form action="#" method="post">
+p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
 
-                <label for="name">Name:</label><br>
-                <input type="text" id="name" name="name" required><br><br>
+/* Overriding obsolete inline attributes like align="middle" */
+p[align="middle"] {
+    text-align: center !important;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #555;
+}
 
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email" required><br><br>
+ul, ol {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
 
-                 <label for="reason">Reason for Contact:</label><br>
+li {
+    margin-bottom: 8px;
+    padding-left: 5px;
+}
 
-                <select id="reason" name="reason">
-                    <option value="">--Select--</option>
-                    <option value="Job Opportunity">Job Opportunity</option>
-                    <option value="Internship">Internship</option>
-                    <option value="Project Collaboration">Project Collaboration</option>
-                    <option value="Other">Other</option>
-                </select><br><br>
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: var(--white);
+}
 
-                <label for="message">Message:</label><br>
-                <textarea id="message" name="message" rows="5" cols="40" required></textarea><br><br>
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid var(--border-color);
+}
 
-                <button type="submit">Send</button>
-                <button type="reset">Reset</button> 
-            </form>
+th {
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-weight: 600;
+}
 
-            <br>
+tr:nth-child(even) {
+    background-color: #f2f5f8;
+}
 
-            <p><strong>Email:</strong> mahletayele127@gmail.com</p>
-            <p><strong>Phone:</strong> +251 900 830 377</p>
-        </section>
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
 
-    </main>
+form label {
+    font-weight: 600;
+    color: #444;
+}
 
-    <hr>
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: #fafafa;
+    transition: border-color 0.3s;
+}
 
-    <footer align="center">
-        <p>&copy; 2026 Mahlet Ayele. All Rights Reserved.</p>
-    </footer>
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: var(--white);
+}
 
-</body>
-</html>
+br {
+    display: none; 
+}
+form div {
+    margin-bottom: 20px;
+}
+form label, form input, form select, form textarea {
+    display: block;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: var(--accent-color);
+}
+
+button[type="reset"] {
+    background-color: #777777;
+}
+
+button[type="reset"]:hover {
+    background-color: #555555;
+}
+
+p strong {
+    color: var(--primary-color);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    color: #777777;
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border-color);
+}
